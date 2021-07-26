@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Fzsuxsmctjw';
+  src: url('./font/FZSuXSMCTJW.TTF');
+}
+
+.font {
+  font-family: "Fzsuxsmctjw", sans-serif !important;
+}
