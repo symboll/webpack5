@@ -24,3 +24,5 @@ img.src = bg
 
 // eslint-disable-next-line
 document.body.append(img)
+
+fetch('api/users')

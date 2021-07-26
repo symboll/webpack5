@@ -154,6 +154,20 @@ module.exports = {
     port: 9200,
     // 启动自动更新 (禁用 hot)
     liveReload: true,
+    open: true,
+    proxy: {
+      // http://localhost:9200/api
+      '/api': {
+        // http://localhost:9200/api/users   ==> https://api.github.com/api/users
+        target: 'https://api.github.com',
+        // http://localhost:9200/api/users   ==> https://api.github.com/users
+        pathRewrite: {
+          '^/api': ''
+        },
+        // 不能使用localhost:9200 作为 github 的主机名
+        changeOrigin: true,
+      }
+    }
   },
   target: 'web'
 }
